@@ -1,0 +1,51 @@
+<head>
+    <title>Open Chat</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header" style="margin-bottom: 30px;">
+            <h3 class="text-muted pull-left">Open Chat</h3>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        {{>messages}}
+                    </div>
+                    <div class="panel-footer">
+                        {{>message_input}}
+                    </div>
+                </div>
+                {{>set_nickname}}
+            </div>
+        </div>
+    </div>
+</body>
+
+<template name="messages">
+    <ul class="chat">
+        {{#each messages}}
+            <li class="left clearfix"><span class="chat-img pull-left"><b>{{author}}:</b> {{content}}</span></li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="message_input">
+    <div class="input-group">
+        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here...">
+        <span class="input-group-btn">
+            <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
+        </span>
+    </div>
+</template>
+
+<template name="set_nickname">
+    <div class="input-group">
+        <input id="nickname-input" type="text" class="form-control input-sm" value="{{nickname}}">
+        <span class="input-group-btn">
+            <button class="btn btn-sm" id="btn-chat">Update Nickname</button>
+        </span>
+    </div>
+</template>
