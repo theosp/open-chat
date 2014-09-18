@@ -5,6 +5,7 @@
 
 standard-app-packages
 insecure
-bootstrap-3
 coffeescript
-collection-hooks
+mrt:collection-hooks
+mrt:bootstrap-3
+
